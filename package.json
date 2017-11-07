@@ -1,0 +1,29 @@
+{
+  "name": "spint",
+  "version": "1.0.0",
+  "description": "A React-Redux application to search/store Spotify music and pictures from the Unsplash API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "spotify",
+    "instagram",
+    "app",
+    "search"
+  ],
+  "author": "Jeremy Antonoff",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.0",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-spotify": "^0.3.1"
+  }
+}
