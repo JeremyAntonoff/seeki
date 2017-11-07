@@ -1,23 +1,20 @@
 {
   "name": "spint",
   "version": "1.0.0",
-  "description": "A React-Redux application to search/store Spotify music and pictures from the Unsplash API",
+  "description":
+    "A React-Redux application to search/store Spotify music and pictures from the Unsplash API",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "keywords": [
-    "react",
-    "redux",
-    "spotify",
-    "instagram",
-    "app",
-    "search"
-  ],
+  "keywords": ["react", "redux", "spotify", "instagram", "app", "search"],
   "author": "Jeremy Antonoff",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^3.5.0",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
     "mongoose": "^4.13.0",
