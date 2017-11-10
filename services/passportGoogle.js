@@ -14,7 +14,7 @@ module.exports = new GoogleStrategy(
     if (foundUser) {
       done(null, foundUser);
     } else {
-      const newUser = User.create({
+      const newUser = await User.create({
         'google.googleID': profile.id,
         'google.googleName': profile.displayName
       });
