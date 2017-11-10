@@ -9,7 +9,14 @@ router.get(
   middleWare.logout,
   passport.authenticate('spotify')
 );
-router.get('/auth/spotify/callback', passport.authenticate('spotify'));
+
+router.get(
+  '/auth/spotify/callback',
+  passport.authenticate('spotify'),
+  (req, res) => {
+    res.redirect('/');
+  }
+);
 
 router.get(
   '/auth/google',
@@ -17,14 +24,23 @@ router.get(
     scope: ['profile']
   })
 );
+
 router.get(
   '/auth/google/callback',
   middleWare.logout,
-  passport.authenticate('google')
+  passport.authenticate('google'),
+  (req, res) => {
+    res.redirect('/');
+  }
 );
 
-router.get('/api/current_user', (req, res) => {
+router.get('/auth/current_user', (req, res) => {
   res.send(req.user);
+});
+
+router.get('/auth/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
 });
 
 module.exports = router;
