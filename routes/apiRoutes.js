@@ -19,7 +19,21 @@ router.get('/api/results/:query', (req, res) => {
           }
         )
         .then(foundResult => {
-          return res.send(foundResult.data);
+          const foundResults = foundResult.data.tracks.items.map(function(
+            result
+          ) {
+            return {
+              id: randomID(),
+              artist: result.artists[0].name,
+              artistUrl: result.artists[0].external_urls.spotify,
+              track: result.name,
+              trackUrl: result.external_urls.spotify,
+              albumArt: result.album.images[1].url,
+              albumURL: result.album.external_urls.spotify,
+              previewURL: result.preview_url
+            };
+          });
+          res.send(foundResults);
         })
         .catch(async () => {
           axios({
@@ -54,5 +68,10 @@ router.get('/api/results/:query', (req, res) => {
     });
   })();
 });
+
+function randomID() {
+  const num = Math.floor(Math.random() * 1000000 + 1);
+  return num;
+}
 
 module.exports = router;
