@@ -1,0 +1,53 @@
+.splash-page {
+  background: url('../images/splashBG.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  margin: 0px;
+}
+
+.slogan {
+  margin: 0px;
+  padding-top: 120px;
+  text-align: center;
+}
+
+.slogan h1 {
+  color: #63d24f;
+  font-size: 62px;
+  font-size: 4vw;
+  margin: 10px;
+}
+
+.login-slogan {
+  padding: 5px 0px;
+  text-align: center;
+  background: #171b1d;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.login-slogan h2 {
+  margin: 0px;
+  color: #ebebeb;
+}
+
+@media (max-width: 900px) {
+  .slogan {
+    padding-top: 30px;
+  }
+  .slogan h1 {
+    font-size: 36px;
+    font-size: 7vw;
+  }
+
+  .login-slogan {
+    width: 90%;
+  }
+
+  .login-slogan h2 {
+    font-size: 18px;
+  }
+}
