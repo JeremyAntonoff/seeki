@@ -19,7 +19,7 @@ class Results extends Component {
         </div>
         <div className="results-container">
           <ul>
-            <Card />
+            <Card results={this.props.results} button={'SAVE THIS SONG'} />
           </ul>
         </div>
       </div>
