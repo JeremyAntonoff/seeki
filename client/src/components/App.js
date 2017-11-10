@@ -6,6 +6,7 @@ import './app.css';
 import Header from './Header';
 import Splash from './Splash';
 import Results from './Results';
+import Dashboard from './Dashboard';
 
 class App extends Component {
   componentDidMount() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Header />
           <Route exact path="/" component={Splash} />
           <Route path="/results" component={Results} />
+          <Route path="/dashboard" component={Dashboard} />
         </div>
       </BrowserRouter>
     );
