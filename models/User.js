@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
   google: {
     googleID: String,
     googleName: String
-  }
+  },
+  savedItems: [{}]
 });
 
 mongoose.model('User', userSchema);
