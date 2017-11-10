@@ -2,6 +2,7 @@ const SpotifyStrategy = require('passport-spotify').Strategy;
 const { spotifyClientID, spotifyClientSecret } = require('../config/keys.js');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
+
 module.exports = new SpotifyStrategy(
   {
     clientID: spotifyClientID,
