@@ -1,3 +1,8 @@
+audio {
+  width: 300px;
+  height: auto;
+}
+
 .result-card {
   height: 400px;
   width: 300px;
@@ -32,20 +37,20 @@
 
 .card-img {
   height: 205px;
-  width: 299px;
-  margin: 0;
-  border: 1px solid black;
+  width: 300px;
+  margin: 0px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
 }
 
 .card-img:hover {
   opacity: 0.8;
 }
 
-.no-results {
-  padding-top: 100px;
-  font-size: 32px;
-  color: #262b2d;
+.audio-controls {
+  margin-top: 15px;
 }
+
 @media (max-width: 600px) {
   .no-results {
     font-size: 24px;
