@@ -42,13 +42,12 @@
   text-align: center;
   justify-content: space-around;
   align-content: center;
-
-  color: white;
 }
 .results-info li {
   text-align: center;
   font-size: 16px;
-  color: white;
+  color: #e9ffe5;
+  font-weight: bold;
 }
 
 .results-container {
@@ -62,7 +61,7 @@
   padding: 0px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 audio {
