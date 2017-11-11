@@ -2,22 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { Redirect } from 'react-router-dom';
+import Button from './Button';
 import './card.css';
 let count = 0;
 
 class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { disabled: false };
+  }
   componentDidUpdate() {
     for (var ref in this.refs) {
       this.refs[ref].load();
-    }
-  }
-
-  handleSaved(obj, id) {
-    if (!this.props.dashboard) {
-      this.props.saveResultItem(obj);
-    } else {
-      this.props.deleteSavedItem(id);
-      return <Redirect to="/dashboard" />;
     }
   }
 
@@ -31,11 +27,6 @@ class Card extends Component {
   }
 
   render() {
-    if (!this.props.results) {
-      return <div className="no-results">Loading...</div>;
-    } else if (this.props.results.length < 1) {
-      return <div>No results found</div>;
-    }
     return this.props.results.map((result, index) => {
       return (
         <li key={index} className="result-card">
@@ -54,14 +45,16 @@ class Card extends Component {
               alt={result.track || 'cover art'}
             />
           </a>
-          {this.renderAudio(result.previewURL)}
-          <div>
-            <a
-              onClick={() =>
-                this.handleSaved(this.props.results[index], result.id)}
-            >
-              {this.props.button}
-            </a>
+          <div className="audio-controls">
+            {this.renderAudio(result.previewURL)}
+          </div>
+          <div className="card-button">
+            <Button
+              results={this.props.results[index]}
+              id={result.id}
+              buttonText={this.props.button}
+              dashboard={this.props.dashboard}
+            />
           </div>
         </li>
       );
