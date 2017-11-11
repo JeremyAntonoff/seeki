@@ -19,6 +19,7 @@ export const getSavedItems = () => async dispatch => {
 };
 
 export const saveResultItem = resultObj => async dispatch => {
+  resultObj.id = Math.floor(Math.random() * 100000);
   const res = await axios.post('/api/user', resultObj);
   dispatch({ type: GET_SAVED_ITEMS, payload: res.data });
 };
