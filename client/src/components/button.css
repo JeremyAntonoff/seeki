@@ -1,0 +1,26 @@
+.card-button {
+  margin: 0px;
+}
+button {
+  margin: 0 auto;
+  width: 100%;
+  border: none;
+  height: 34px;
+  border-radius: 5px;
+  color: black;
+  background: #63c742;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #a4ff8a;
+}
+
+button:disabled {
+  background: #cecece;
+  color: darkgray;
+  cursor: not-allowed;
+}
