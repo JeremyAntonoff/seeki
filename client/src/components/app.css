@@ -27,6 +27,13 @@ ul {
 li {
   display: inline-block;
 }
+
+.no-results {
+  padding-top: 100px;
+  color: white;
+  text-align: center;
+  font-size: 72px;
+}
 #root,
 #root > div {
   height: 100%;
