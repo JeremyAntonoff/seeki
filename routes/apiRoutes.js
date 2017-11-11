@@ -23,7 +23,7 @@ router.get('/api/results/:query', (req, res) => {
             result
           ) {
             return {
-              id: randomID(),
+              id: 0,
               artist: result.artists[0].name,
               artistUrl: result.artists[0].external_urls.spotify,
               track: result.name,
@@ -68,10 +68,5 @@ router.get('/api/results/:query', (req, res) => {
     });
   })();
 });
-
-function randomID() {
-  const num = Math.floor(Math.random() * 1000000 + 1);
-  return num;
-}
 
 module.exports = router;
