@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import { Redirect } from 'react-router-dom';
 import Button from './Button';
 import './card.css';
 let count = 0;
@@ -11,6 +10,7 @@ class Card extends Component {
     super(props);
     this.state = { disabled: false };
   }
+
   componentDidUpdate() {
     for (var ref in this.refs) {
       this.refs[ref].load();
@@ -31,7 +31,7 @@ class Card extends Component {
       return (
         <li key={index} className="result-card">
           <div className="header-card">
-            <a href={result.artistURL || '/'} target="_blank">
+            <a href={result.artistUrl || '/'} target="_blank">
               <h2>{result.artist || 'No Artists Name'}</h2>
             </a>
             <a href={result.trackUrl || '/'} target="_blank">
