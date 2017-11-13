@@ -12,7 +12,7 @@ class Button extends Component {
   }
   alertOptions = {
     offset: 0,
-    position: 'top left',
+    position: 'top right',
     theme: 'dark',
     time: 5000,
     transition: 'scale'
