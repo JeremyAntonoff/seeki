@@ -26,7 +26,7 @@
 .results-info {
   margin: 0px;
   padding: 0px;
-  height: 50px;
+  height: 40px;
   background: #262b2d;
   width: 95%;
   margin: 0 auto;
@@ -43,10 +43,11 @@
   justify-content: space-around;
   align-content: center;
 }
+
 .results-info li {
   text-align: center;
   font-size: 16px;
-  color: #e9ffe5;
+  color: #a4f197;
   font-weight: bold;
 }
 
@@ -61,20 +62,23 @@
   padding: 0px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 audio {
   margin: 0px;
   width: 300px;
 }
+
 @media (max-width: 900px) {
   .top-info {
     width: 100%;
   }
+
   .results-info ul {
     padding: 10px 0px;
   }
+
   .results-info li {
     text-align: center;
     font-size: 14px;
