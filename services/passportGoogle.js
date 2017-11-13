@@ -10,13 +10,16 @@ module.exports = new GoogleStrategy(
     callbackURL: '/auth/google/callback'
   },
   async (accessToken, refreshToken, profile, done) => {
+    const firstName = profile.displayName.split(' ')[0];
+    const profileName = firstName.length < 12 ? firstName : 'Seeki User';
+    console.log(profileName);
     const foundUser = await User.findOne({ 'google.googleID': profile.id });
     if (foundUser) {
       done(null, foundUser);
     } else {
       const newUser = await User.create({
         'google.googleID': profile.id,
-        'google.googleName': profile.displayName
+        'google.googleName': profileName
       });
       done(null, newUser);
     }
