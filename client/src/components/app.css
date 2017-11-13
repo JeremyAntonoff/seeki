@@ -28,14 +28,29 @@ li {
   display: inline-block;
 }
 
-.no-results {
-  padding-top: 100px;
+.error-msg {
+  margin: 100px auto;
+  padding: 20px 20px;
+  background: #232323;
+  width: 55%;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 5px;
   color: white;
   text-align: center;
-  font-size: 72px;
+  font-size: 38px;
+  opacity: 0.8;
 }
+
 #root,
 #root > div {
   height: 100%;
   margin: 0px;
+}
+
+@media (max-width: 900px) {
+  .error-msg {
+    width: 80%;
+    font-size: 28px;
+  }
 }
