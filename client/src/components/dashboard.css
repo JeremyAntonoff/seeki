@@ -47,5 +47,6 @@
 @media (max-width: 900px) {
   .return-search {
     width: 88%;
+    font-size: 26px;
   }
 }
