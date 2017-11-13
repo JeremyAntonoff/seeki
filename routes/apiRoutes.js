@@ -4,7 +4,7 @@ const axios = require('axios');
 require('../models/Token');
 const mongoose = require('mongoose');
 const Token = mongoose.model('Token');
-const keys = require('../config/dev');
+const keys = require('../config/keys');
 
 router.get('/api/results/:query', (req, res) => {
   (function getSpotifyData() {
