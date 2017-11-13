@@ -8,7 +8,6 @@ let count = 0;
 class Card extends Component {
   constructor(props) {
     super(props);
-    this.state = { disabled: false };
   }
 
   componentDidUpdate() {
