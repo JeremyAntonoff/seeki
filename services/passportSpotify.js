@@ -10,11 +10,16 @@ module.exports = new SpotifyStrategy(
     callbackURL: '/auth/spotify/callback'
   },
   async (accessToken, refreshToken, profile, done) => {
+    const firstName = profile.id.split(' ')[0];
+    const profileName = firstName.length < 5 ? firstName : 'Seeki User';
     const foundUser = await User.findOne({ 'spotify.spotifyID': profile.id });
     if (foundUser) {
       done(null, foundUser);
     } else {
-      const newUser = await User.create({ 'spotify.spotifyID': profile.id });
+      const newUser = await User.create({
+        'spotify.spotifyID': profile.id,
+        'spotify.spotifyName': profileName
+      });
       done(null, newUser);
     }
   }
