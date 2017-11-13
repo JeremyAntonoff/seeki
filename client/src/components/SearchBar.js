@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import * as actions from '../actions';
 import './searchbar.css';
-import { Redirect } from 'react-router-dom';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -16,20 +16,18 @@ class SearchBar extends Component {
   }
   render() {
     const { redirect } = this.state;
-    if (redirect) {
-      this.setState({ redirect: false });
-      return <Redirect to="/results" />;
-    }
-
     return (
-      <form onSubmit={this.onFormSubmit.bind(this)} className="form">
-        <input
-          type="text"
-          value={this.state.formVal}
-          onChange={e => this.setState({ formVal: e.target.value })}
-          placeholder={this.props.placeholder}
-        />
-      </form>
+      <div>
+        <form onSubmit={this.onFormSubmit.bind(this)} className="form">
+          <input
+            type="text"
+            value={this.state.formVal}
+            onChange={e => this.setState({ formVal: e.target.value })}
+            placeholder={this.props.placeholder}
+          />
+        </form>
+        {redirect && <Redirect to={'/results'} />}
+      </div>
     );
   }
 }
