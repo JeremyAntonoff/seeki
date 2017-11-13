@@ -4,10 +4,10 @@ audio {
 }
 
 .result-card {
-  height: 400px;
+  height: auto;
   width: 300px;
   background: #455a64;
-  border: 1.5px solid black;
+  border: 3px solid black;
   border-radius: 5px;
   margin: 50px 10px;
   -webkit-box-shadow: 2px 11px 58px -1px rgba(0, 0, 0, 0.75);
@@ -23,6 +23,7 @@ audio {
   color: white;
   opacity: 1;
 }
+
 .header-card h2 {
   margin: 0;
   color: #67e24d;
@@ -31,6 +32,7 @@ audio {
 .header-card h2:hover {
   color: #ccffbb;
 }
+
 .header-card h3:hover {
   color: #c4ced2;
 }
