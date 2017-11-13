@@ -59,6 +59,7 @@
 
 .welcome-msg {
   padding-left: 10%;
+  padding-top: 2px;
 }
 
 .logged-in {
@@ -94,8 +95,8 @@
   .login-button {
     padding-left: 5px;
     margin: 3px;
-    width: 120px;
-    font-size: 12px;
+    width: 114px;
+    font-size: 11px;
   }
 
   .welcome-msg {
