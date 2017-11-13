@@ -1,6 +1,7 @@
 import React from 'react';
-import './splash.css';
 import SearchBar from './SearchBar';
+import './splash.css';
+
 const Splash = () => (
   <div className="splash-page">
     <div className="container">
