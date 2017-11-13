@@ -4,59 +4,54 @@ import './Header.css';
 
 class Header extends Component {
   renderContent() {
-    switch (this.props.auth) {
-      case null:
-        return;
-      case false:
-        return (
-          <div>
-            <li>
-              <a className="login-button" href="/auth/spotify">
-                <img
-                  src="/images/spotify.png"
-                  className="loginIMG"
-                  alt="Spotify login"
-                />
-                Spotify Login
-              </a>
-            </li>
-            <li>
-              <a className="login-button" href="/auth/google">
-                <img
-                  src="/images/google.png"
-                  className="loginIMG"
-                  alt="Google login"
-                />
-                Google Login
-              </a>
-            </li>
-          </div>
-        );
-      default: {
-        const { googleName } = this.props.auth.google || '';
-        const { spotifyID } = this.props.auth.spotify || '';
-        return (
-          <div>
-            <p className="welcome-msg">
-              Welcome {googleName || spotifyID || 'User!'}!
-            </p>
-            <li />
-            <li>
-              <a className="login-button logged-in" href="/dashboard">
-                Saved Items
-              </a>
-            </li>
-            <li>
-              <a className="login-button logged-in" href="/auth/logout">
-                Logout
-              </a>
-            </li>
-          </div>
-        );
-      }
+    if (!this.props.auth) {
+      return (
+        <div>
+          <li>
+            <a className="login-button" href="/auth/spotify">
+              <img
+                src="/images/spotify.png"
+                className="loginIMG"
+                alt="Spotify login"
+              />
+              Spotify Login
+            </a>
+          </li>
+          <li>
+            <a className="login-button" href="/auth/google">
+              <img
+                src="/images/google.png"
+                className="loginIMG"
+                alt="Google login"
+              />
+              Google Login
+            </a>
+          </li>
+        </div>
+      );
+    } else {
+      const { googleName } = this.props.auth.google || '';
+      const { spotifyName } = this.props.auth.spotify || '';
+      return (
+        <div>
+          <p className="welcome-msg">
+            Welcome {googleName || spotifyName || 'Seeki User'}!
+          </p>
+          <li />
+          <li>
+            <a className="login-button logged-in" href="/dashboard">
+              Saved Items
+            </a>
+          </li>
+          <li>
+            <a className="login-button logged-in" href="/auth/logout">
+              Logout
+            </a>
+          </li>
+        </div>
+      );
     }
   }
-
   render() {
     return (
       <nav className="top-header">
@@ -64,7 +59,7 @@ class Header extends Component {
           <a href="/" className="logo">
             <img src="/images/logo.png" alt="logo" />
           </a>
-          <ul className="right">{this.renderContent()}</ul>
+          <div className="right">{this.renderContent()}</div>
         </div>
       </nav>
     );
