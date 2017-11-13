@@ -33,8 +33,8 @@ class Header extends Component {
           </div>
         );
       default: {
-        const { googleName } = this.props.auth.google || {};
-        const { spotifyID } = this.props.auth.spotify || {};
+        const { googleName } = this.props.auth.google || '';
+        const { spotifyID } = this.props.auth.spotify || '';
         return (
           <div>
             <p className="welcome-msg">
