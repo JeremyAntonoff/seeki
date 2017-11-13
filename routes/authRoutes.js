@@ -7,19 +7,20 @@ const middleWare = require('../middleware');
 router.get(
   '/auth/spotify',
   middleWare.logout,
+  middleWare.setRedirect,
   passport.authenticate('spotify')
 );
 
 router.get(
   '/auth/spotify/callback',
-  passport.authenticate('spotify'),
-  (req, res) => {
-    res.redirect('/');
-  }
+  passport.authenticate('spotify', { failureRedirect: '/' }),
+  middleWare.successRedirect
 );
 
 router.get(
   '/auth/google',
+  middleWare.logout,
+  middleWare.setRedirect,
   passport.authenticate('google', {
     scope: ['profile']
   })
@@ -27,11 +28,8 @@ router.get(
 
 router.get(
   '/auth/google/callback',
-  middleWare.logout,
-  passport.authenticate('google'),
-  (req, res) => {
-    res.redirect('/');
-  }
+  passport.authenticate('google', { failureRedirect: '/' }),
+  middleWare.successRedirect
 );
 
 router.get('/auth/current_user', (req, res) => {
