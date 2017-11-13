@@ -20,5 +20,32 @@
   padding: 0px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.return-search {
+  margin: -40px auto 25px auto;
+  padding: 20px 20px;
+  background: #515251;
+  width: 40%;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  opacity: 0.9;
+  transition: all 0.5s;
+  font-weight: bold;
+}
+
+.return-search:hover {
+  background: #a4ff8a;
+  color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .return-search {
+    width: 88%;
+  }
 }
