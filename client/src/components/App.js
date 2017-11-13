@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import * as actions from '../actions';
-import './app.css';
 import Header from './Header';
 import Splash from './Splash';
 import Results from './Results';
 import Dashboard from './Dashboard';
+import './app.css';
 
 class App extends Component {
   componentDidMount() {
     this.props.getUser();
   }
+
   render() {
     return (
       <BrowserRouter>
