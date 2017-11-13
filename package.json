@@ -1,6 +1,10 @@
 {
   "name": "Speeki",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.5.1"
+  },
   "description":
     "A React-Redux application to search for and save Spotify music",
   "main": "index.js",
