@@ -2,6 +2,11 @@
   margin: 0px;
 }
 
+.css-1vm9g5e,
+[data-css-1vm9g5e] {
+  z-index: 1000;
+}
+
 .require-login {
   margin: 0 auto;
   text-align: center;
