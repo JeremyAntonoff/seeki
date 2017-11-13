@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AlertContainer from 'react-alert';
 import * as actions from '../actions';
+import AlertContainer from 'react-alert';
 import './button.css';
 
 class Button extends Component {
@@ -11,8 +11,8 @@ class Button extends Component {
     this.showAlert = this.showAlert.bind(this);
   }
   alertOptions = {
-    offset: 65,
-    position: 'top right',
+    offset: 0,
+    position: 'top left',
     theme: 'dark',
     time: 5000,
     transition: 'scale'
@@ -36,6 +36,9 @@ class Button extends Component {
   };
 
   render() {
+    if (!this.props.auth) {
+      return <div className="require-login">Sign in to save!</div>;
+    }
     return (
       <div>
         <AlertContainer ref={a => (this.msg = a)} {...this.alertOptions} />
@@ -50,4 +53,8 @@ class Button extends Component {
   }
 }
 
-export default connect(null, actions)(Button);
+function mapStateToProps(state) {
+  return { auth: state.auth };
+}
+
+export default connect(mapStateToProps, actions)(Button);
