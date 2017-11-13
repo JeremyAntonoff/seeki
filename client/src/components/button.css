@@ -1,6 +1,23 @@
 .card-button {
   margin: 0px;
 }
+
+.require-login {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  border: none;
+  height: 22px;
+  padding: 5px 0px;
+  border-radius: 5px;
+  color: black;
+  background: #dadada;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: not-allowed;
+}
+
 button {
   margin: 0 auto;
   width: 100%;
