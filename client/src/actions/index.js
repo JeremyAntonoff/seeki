@@ -26,6 +26,5 @@ export const saveResultItem = resultObj => async dispatch => {
 
 export const deleteSavedItem = id => async dispatch => {
   const res = await axios.get(`/api/user/${id}`);
-  console.log(res.data);
   dispatch({ type: GET_SAVED_ITEMS, payload: res.data });
 };
