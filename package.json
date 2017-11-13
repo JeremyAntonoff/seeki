@@ -1,7 +1,8 @@
 {
-  "name": "spint",
+  "name": "Speeki",
   "version": "1.0.0",
-  "description": "A React-Redux application to search/store Spotify music and pictures from the Unsplash API",
+  "description":
+    "A React-Redux application to search for and save Spotify music",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -9,14 +10,7 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "keywords": [
-    "react",
-    "redux",
-    "spotify",
-    "instagram",
-    "app",
-    "search"
-  ],
+  "keywords": ["react", "redux", "spotify", "app", "search"],
   "author": "Jeremy Antonoff",
   "license": "ISC",
   "dependencies": {
