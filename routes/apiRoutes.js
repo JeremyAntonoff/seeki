@@ -42,7 +42,7 @@ router.get('/api/results/:query', (req, res) => {
             params: {
               grant_type: 'refresh_token',
               refresh_token: tokens.spotifyRefreshToken,
-              redirect_uri: 'http://localhost:3000/auth/spotify/callback'
+              redirect_uri: keys.spotifyCallbackURI
             },
             headers: {
               Authorization:
@@ -54,13 +54,12 @@ router.get('/api/results/:query', (req, res) => {
             }
           })
             .then(async res => {
-              console.log(res);
               const updatedToken = await Token.findOneAndUpdate(
                 { name: 'seeki' },
                 { spotifyAccessToken: res.data.access_token },
                 { new: true }
               );
-              console.log('this is updated', updatedToken);
+              console.log('Token Updated: ', updatedToken);
               getSpotifyData();
             })
             .catch(err => console.log(err));
