@@ -3,28 +3,37 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Card from './Card';
 import './dashboard.css';
+
 class Dashboard extends Component {
   componentDidMount() {
     this.props.getSavedItems();
   }
-  render() {
-    if (!this.props.savedItems) {
-      return (
-        <div className="dashboard-page">
-          <div className="dashboard-container" />
-        </div>
-      );
-    } else if (this.props.savedItems < 1) {
-      return (
-        <div className="dashboard-page">
-          <div className="dashboard-container">
-            <div className="no-results">No results found!</div>
-          </div>
-        </div>
-      );
-    }
+
+  renderTopContent(error) {
     return (
       <div className="dashboard-page">
+        <a href="/results">
+          <div className="return-search">SEARCH MORE MUSIC</div>
+          {error}
+        </a>
+      </div>
+    );
+  }
+
+  render() {
+    if (!this.props.savedItems) {
+      return this.renderTopContent();
+    } else if (this.props.savedItems < 1) {
+      return this.renderTopContent(
+        <div className="error-msg">No results found!</div>
+      );
+    }
+
+    return (
+      <div className="dashboard-page">
+        <a href="/results">
+          <div className="return-search">SEARCH MORE MUSIC</div>
+        </a>
         <div className="dashboard-container">
           <ul>
             <Card
@@ -40,7 +49,6 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state.savedItems);
   return { savedItems: state.savedItems };
 }
 
