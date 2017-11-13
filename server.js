@@ -10,7 +10,7 @@ require('./services/passport');
 const authRoutes = require('./routes/authRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 const savedItemsRoutes = require('./routes/savedItemsRoutes');
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 mongoose.connect(keys.mongoURI, { useMongoClient: true });
 // seeds accessToken:
 // require('./services/seedToken.js');
