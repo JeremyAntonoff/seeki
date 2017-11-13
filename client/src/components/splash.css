@@ -14,8 +14,7 @@
 
 .slogan h1 {
   color: #63d24f;
-  font-size: 62px;
-  font-size: 4vw;
+  font-size: 56px;
   margin: 10px;
 }
 
@@ -23,7 +22,7 @@
   padding: 5px 0px;
   text-align: center;
   background: #171b1d;
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
   border-radius: 10px;
   border: 1px solid white;
@@ -38,9 +37,9 @@
   .slogan {
     padding-top: 30px;
   }
+
   .slogan h1 {
     font-size: 36px;
-    font-size: 7vw;
   }
 
   .login-slogan {
