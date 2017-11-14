@@ -45,6 +45,7 @@ li {
 #root > div {
   height: 100%;
   margin: 0px;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
