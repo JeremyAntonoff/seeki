@@ -39,12 +39,18 @@ class Results extends Component {
   }
   render() {
     if (!this.props.results) {
-      return <div className="results-page">{this.renderTopContent()};</div>;
+      return (
+        <div className="results-page">
+          <div className="results-section">{this.renderTopContent()};</div>
+        </div>
+      );
     } else if (this.props.results < 1) {
       return (
         <div className="results-page">
-          {this.renderTopContent()}
-          <div className="error-msg">No results found!</div>
+          <div className="results-section">
+            {this.renderTopContent()}
+            <div className="error-msg">No results found!</div>
+          </div>
         </div>
       );
     }
