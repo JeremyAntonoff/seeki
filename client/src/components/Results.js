@@ -31,7 +31,7 @@ class Results extends Component {
         <SearchBar placeholder={'Continue your adventure...'} />
         <div className="results-info">
           <ul>
-            <li>Some albums dont have preview audio available</li>
+            <li>*Preview audio for some albums is unavailable</li>
           </ul>
         </div>
       </div>
@@ -62,7 +62,7 @@ class Results extends Component {
             <SearchBar placeholder={'Continue your adventure...'} />
             <div className="results-info">
               <ul>
-                <li>*Some albums dont have preview audio available</li>
+                <li>*Preview audio for some albums is unavailable</li>
               </ul>
             </div>
           </div>
