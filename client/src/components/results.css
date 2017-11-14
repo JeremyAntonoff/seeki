@@ -1,4 +1,9 @@
 .results-page {
+  height: 100%;
+  margin: 0px;
+}
+
+.results-section {
   background: url('../images/resultsBG.jpg');
   background-size: cover;
   background-position: center;
@@ -14,8 +19,8 @@
 }
 
 .results-page .form input {
-  width: 95%;
   height: 70px;
+  width: 95%;
 }
 
 .top-info {
