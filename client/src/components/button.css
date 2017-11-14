@@ -2,14 +2,6 @@
   margin: 0px;
 }
 
-.css-1iy48dc,
-[data-css-1iy48dc] {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
 .require-login {
   margin: 0 auto;
   text-align: center;
@@ -27,16 +19,16 @@
 }
 
 button {
+  height: 34px;
   margin: 0 auto;
   width: 100%;
-  border: none;
-  height: 34px;
-  border-radius: 5px;
   color: black;
   background: #63c742;
   letter-spacing: 1px;
   font-size: 16px;
   font-weight: bold;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
