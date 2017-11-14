@@ -81,12 +81,11 @@ audio {
   }
 
   .results-info ul {
-    padding: 10px 0px;
+    padding: 12px 0px;
   }
 
   .results-info li {
     text-align: center;
     font-size: 14px;
-    color: white;
   }
 }
