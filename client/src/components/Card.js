@@ -53,6 +53,7 @@ class Card extends Component {
               id={result.id}
               buttonText={this.props.button}
               dashboard={this.props.dashboard}
+              alert={this.props.alert}
             />
           </div>
         </li>
