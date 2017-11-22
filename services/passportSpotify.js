@@ -11,7 +11,7 @@ module.exports = new SpotifyStrategy(
   },
   async (accessToken, refreshToken, profile, done) => {
     const firstName = profile.id.split(' ')[0];
-    const profileName = firstName.length < 5 ? firstName : 'Seeki User';
+    const profileName = firstName.length < 12 ? firstName : 'Seeki User';
     const foundUser = await User.findOne({ 'spotify.spotifyID': profile.id });
     if (foundUser) {
       done(null, foundUser);
