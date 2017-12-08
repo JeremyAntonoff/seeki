@@ -4,7 +4,7 @@
 
 ### A web application that features:
 1. The ability for a user to search for a track or artists and get up to twenty results.
-2. A user can play 30 seconds of snippets if audio is available.
+2. A user can play 30 second snippets of audio if available.
 3. If signed in, the user can save the music to their account.
 4. Under Saved Items, users can view everything they have saved up to that point.
 
