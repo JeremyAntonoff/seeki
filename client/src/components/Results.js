@@ -37,7 +37,23 @@ class Results extends Component {
       </div>
     );
   }
+
+  renderError(err) {
+    return <div className="error-msg">{err}</div>;
+  }
+
   render() {
+    if (this.props.results === 'error') {
+      return (
+        <div className="results-page">
+          <div className="results-section">
+            {this.renderTopContent()}
+            {this.renderError('An Error has occured. Please try again Later!')}
+          </div>
+        </div>
+      );
+    }
+
     if (!this.props.results) {
       return (
         <div className="results-page">
@@ -49,7 +65,7 @@ class Results extends Component {
         <div className="results-page">
           <div className="results-section">
             {this.renderTopContent()}
-            <div className="error-msg">No results found!</div>
+            {this.renderError('No Results Found')}
           </div>
         </div>
       );

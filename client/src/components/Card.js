@@ -26,6 +26,9 @@ class Card extends Component {
   }
 
   render() {
+    if (this.props.results === 'error') {
+      return <div />;
+    }
     return this.props.results.map((result, index) => {
       return (
         <li key={index} className="result-card">
