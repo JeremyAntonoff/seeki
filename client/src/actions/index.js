@@ -9,8 +9,20 @@ export const getUser = () => async dispatch => {
 };
 
 export const getResults = searchTerm => async dispatch => {
-  const res = await axios.get(`/api/results/${searchTerm}`);
-  dispatch({ type: GET_RESULTS, payload: res.data });
+  let retry = 3;
+  while (true) {
+    try {
+      const res = await axios.get(`/api/results/${searchTerm}`);
+      if (res.data) {
+        return dispatch({ type: GET_RESULTS, payload: res.data });
+      }
+    } catch (error) {
+      retry--;
+      if (!retry) {
+        return dispatch({ type: GET_RESULTS, payload: 'error' });
+      }
+    }
+  }
 };
 
 export const getSavedItems = () => async dispatch => {
