@@ -7,6 +7,10 @@ const Token = mongoose.model('Token');
 const keys = require('../config/keys');
 
 router.get('/api/results/:query', (req, res) => {
+  let randomFail = Math.floor(Math.random() * 60) + 1;
+  if (randomFail <= 40) {
+    return res.send(503);
+  }
   (function getSpotifyData() {
     Token.findOne({ name: 'seeki' }).then(async tokens => {
       axios
